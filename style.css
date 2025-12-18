@@ -1,0 +1,255 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* ===== BASE ===== */
+body {
+  background: radial-gradient(ellipse at top, #0c0c12, #000000 70%);
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+header {
+  padding: 32px 0 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e6cff;
+  margin-bottom: 18px;
+}
+
+/* ===== NAV ===== */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #8a8a8a;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+nav a.active {
+  color: #ffffff;
+}
+
+nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #1e6cff;
+  border-radius: 2px;
+}
+
+/* ===== MAIN ===== */
+main {
+  width: 420px;
+  margin: 0 auto;
+  padding-bottom: 120px;
+}
+
+/* ===== SEARCH ===== */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #2a2a2a;
+  border-radius: 20px;
+  padding: 10px 14px;
+  margin-bottom: 22px;
+}
+
+.search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.search-box input::placeholder {
+  color: #8a8a8a;
+}
+
+.search-box button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search-box img {
+  width: 18px;
+  opacity: 0.8;
+}
+
+/* ===== TRACK CARD ===== */
+.track {
+  background: linear-gradient(
+    180deg,
+    rgba(40, 40, 40, 0.9),
+    rgba(24, 24, 24, 0.9)
+  );
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.2s ease, transform 0.15s ease;
+  cursor: pointer;
+}
+
+.track:hover {
+  background: rgba(60, 60, 60, 0.9);
+  transform: translateY(-1px);
+}
+
+/* ===== TRACK INFO ===== */
+.track-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.track-info strong {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.track-info span {
+  font-size: 12px;
+  color: #9a9a9a;
+}
+
+/* ===== HEART ===== */
+.track img {
+  width: 20px;
+  opacity: 0.9;
+  transition: transform 0.15s ease;
+}
+
+.track img:hover {
+  transform: scale(1.15);
+}
+
+/* ===== PLAYER ===== */
+.player {
+  position: fixed;
+  bottom: 28px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  z-index: 10;
+}
+
+/* ===== PLAYER CONTROLS (CSS SHAPES) ===== */
+.control {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1e6cff;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  box-shadow: 0 0 20px rgba(30, 108, 255, 0.45);
+  transition: transform 0.15s ease;
+}
+
+.control:hover {
+  transform: scale(1.1);
+}
+
+/* === PLAY (triangle) === */
+.control.play::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  width: 0;
+  height: 0;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 18px solid #ffffff;
+}
+
+/* === PAUSE (two bars) === */
+.control.pause::before,
+.control.pause::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+.control.pause::before {
+  left: 19px;
+}
+
+.control.pause::after {
+  right: 19px;
+}
+
+/* === PREVIOUS === */
+.control.prev::before,
+.control.prev::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 14px solid #ffffff;
+}
+
+.control.prev::before {
+  left: 14px;
+}
+
+.control.prev::after {
+  left: 28px;
+}
+
+/* === NEXT === */
+.control.next::before,
+.control.next::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 14px solid #ffffff;
+}
+
+.control.next::before {
+  right: 28px;
+}
+
+.control.next::after {
+  right: 14px;
+}
+

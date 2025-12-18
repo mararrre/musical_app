@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musical App</title>
+  <meta charset="UTF-8" />
+  <title>Ethereal</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Ethereal - joy for ears</h1>
+
+<header>
+  <h1>Ethereal – joy for ears</h1>
+  <nav>
+    <a href="index.html" class="active">Playlist</a>
+    <a href="search.html">Search</a>
+  </nav>
+</header>
+
+<main>
+  <div id="playlist"></div>
+</main>
+
+<footer class="player">
+  <button id="prev" class="control prev" aria-label="Previous"></button>
+  <button id="play" class="control pause" aria-label="Play/Pause"></button>
+  <button id="next" class="control next" aria-label="Next"></button>
+</footer>
+
+<audio id="audio"></audio>
+
+<script src="scripts.js"></script>
 </body>
 </html>
